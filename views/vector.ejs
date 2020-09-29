@@ -4584,7 +4584,7 @@ return mapboxgl;
       map.addSource('<%= sid %>', {
         type: 'vector',
         tiles: [
-        window.location.origin+'/<%= sid %>/{z}/{x}/{y}.pbf'
+        window.location.origin+'/mbtiles/<%= sid %>/{z}/{x}/{y}.pbf'
         ],
         maxzoom: <%= sources[sid].maxzoom %>
     });

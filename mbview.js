@@ -58,7 +58,7 @@ module.exports = {
   listen: function (config, onListen) {
     const format = config.tiles._info.format;
 
-    app.get('/', (req, res) => {
+    app.get('/mbview/', (req, res) => {
       if (format === 'pbf') {
         res.render('vector', config);
       } else {
@@ -66,7 +66,7 @@ module.exports = {
       }
     });
 
-    app.get('/:source/:z/:x/:y.' + format, (req, res) => {
+    app.get('/mbtiles/:source/:z/:x/:y.' + format, (req, res) => {
       const p = req.params;
 
       const tiles = config.sources[p.source].tiles;
